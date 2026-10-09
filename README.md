@@ -168,6 +168,56 @@ Close Ticket
 Filter and View Tickets
 ```
 
+## Project Architecture
+
+The CRM Ticket Management System follows a simple three-layer architecture.
+
+**1. Presentation Layer (Frontend)**
+
+- Built using Streamlit.
+- Displays the dashboard, ticket forms, ticket lists, and filters.
+- Allows users to create and manage support tickets.
+
+**2. Application Layer (Backend)**
+
+- Built using Python.
+- Handles ticket creation, agent assignment, priority updates, and status updates.
+- Processes ticket filtering and dashboard summaries using Pandas where required.
+
+**3. Database Layer**
+
+- Uses SQLite to store customer, agent, and ticket information.
+- Maintains relationships between customers, agents, and tickets.
+- Stores ticket status, priority, resolution notes, and timestamps.
+
+### Architecture Flow
+
+Streamlit User Interface
+
+↓
+
+Python Application Logic
+
+↓
+
+Ticket Operations and Data Processing
+
+↓
+
+SQLite Database
+
+↓
+
+Updated Ticket Data and Dashboard Results
+
+### Data Flow
+
+1. The user interacts with the Streamlit interface.
+2. The Python backend processes the user's request.
+3. Ticket operations read or update information in the SQLite database.
+4. The application retrieves the updated data.
+5. Streamlit displays the results to the user.
+
 ## How to Run
 
 Clone the repository and open the project folder.
